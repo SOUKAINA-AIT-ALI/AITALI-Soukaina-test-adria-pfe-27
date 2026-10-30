@@ -49,3 +49,7 @@ env/
 .DS_Store
 Thumbs.db
 
+
+# Extracted media folder for docx generation
+extracted_media/
+build_report.py
