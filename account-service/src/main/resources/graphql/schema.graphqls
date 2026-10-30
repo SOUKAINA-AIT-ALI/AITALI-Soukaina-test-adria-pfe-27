@@ -1,0 +1,27 @@
+type Query {
+    accounts: [AccountResponse]
+    accountById(id: ID!): AccountResponse
+}
+
+type Mutation {
+    createAccount(input: CreateAccountInput!): AccountResponse
+    debitAccount(id: ID!, amount: Float!): AccountResponse
+    creditAccount(id: ID!, amount: Float!): AccountResponse
+    updateStatus(id: ID!, status: String!): AccountResponse
+}
+
+type AccountResponse {
+    id: ID!
+    customerReference: String!
+    status: String!
+    currency: String!
+    balance: Float!
+}
+
+input CreateAccountInput {
+    customerReference: String!
+    currency: String!
+    initialBalance: Float!
+    status: String
+}
+
