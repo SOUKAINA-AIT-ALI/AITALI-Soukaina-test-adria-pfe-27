@@ -24,7 +24,7 @@
     </properties>
 
     <modules>
-        <!-- Les sous-modules seront activés au fur et à mesure de leur création -->
+        <module>discovery-service</module>
     </modules>
 
     <dependencyManagement>
@@ -115,4 +115,3 @@
         </pluginManagement>
     </build>
 </project>
-
