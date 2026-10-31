@@ -133,42 +133,4 @@ Pour exécuter la plateforme localement, lancer dans des terminaux séparés :
 5. .\mvnw.cmd spring-boot:run -pl transaction-service
 ```
 
----
-
-## 🔍 Catalogue des Endpoints & Tests
-
-| Microservice | Composant | Endpoint / URL | Description |
-|---|---|---|---|
-| **discovery-service** | Dashboard Web | `http://localhost:8761` | Console d'administration Eureka |
-| **config-service** | Config Server | `http://localhost:8888/transaction-service/default` | Propriété partagée `bank.transaction.max-amount=1000` |
-| **gateway-service** | Actuator Routes | `http://localhost:8080/actuator/gateway/routes` | Liste JSON des routes actives |
-| **account-service** | REST API | `http://localhost:8081/api/accounts` | Liste des comptes bancaires |
-| **account-service** | Console H2 | `http://localhost:8081/h2-console` | Base mémoire (`jdbc:h2:mem:accountdb`, user: `sa`) |
-| **account-service** | GraphiQL | `http://localhost:8081/graphiql` | Interface interactive de requêtes GraphQL |
-| **account-service** | MCP Tools | `http://localhost:8081/mcp/tools` | Catalogue des outils pour l'assistant IA |
-| **transaction-service**| REST API | `http://localhost:8082/api/transactions/account/{id}` | Historique des transactions d'un compte |
-| **transaction-service**| REST Virement | `http://localhost:8082/api/transactions/transfer` | Exécution d'un virement entre comptes |
-| **transaction-service**| GraphiQL | `http://localhost:8082/graphiql` | Requêtes et mutations GraphQL de transactions |
-| **transaction-service**| MCP Tools | `http://localhost:8082/mcp/tools` | Outils MCP de transaction et de virement |
-
----
-
-## 📋 Suivi du Sujet (Roadmap)
-
-- [x] **Partie A — Préparation et initialisation** (Repo GitHub, Conventional Commits, POM multi-modules)
-- [x] **Partie B — Conception et Architecture** (Diagramme de classes & Schéma d'architecture globale)
-- [x] **Partie C.1 — Account-Service** (Domain, Repository, Service, H2, REST, GraphQL, MCP)
-- [x] **Partie C.2 & C.3 — Transaction-Service** (Logique métier, OpenFeign, Resilience4J, REST, GraphQL, MCP)
-- [x] **Partie D.1 — Spring Cloud Gateway** (Routage dynamique, Actuator)
-- [x] **Partie D.2 — Eureka Discovery Service** (Annuaire de services)
-- [x] **Partie D.3 — Config Service** (Paramètre `bank.transaction.max-amount=1000`)
-- [ ] **Partie E — Chatbot Agentique** (Spring AI, LLM et serveurs MCP) ⏳ *À réaliser*
-- [ ] **Partie F — Communication Asynchrone Kafka** (Topic `bank.transactions.created` & Consumer logs) ⏳ *À réaliser*
-- [ ] **Partie G — Client Frontend** (Interface Web Angular) ⏳ *À réaliser*
-- [ ] **Partie H — Machine Learning Python** (Détection de fraude bancaire & analyse) ⏳ *À réaliser*
-- [ ] **Partie I — DevOps** (Dockerfiles, Docker Compose, CI/CD GitHub Actions) ⏳ *À réaliser*
-
----
-
-*Projet conforme aux exigences académiques ENSET et professionnelles ADRIA Business & Technology.*
 
